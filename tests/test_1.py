@@ -53,8 +53,10 @@ class TestHomework:
 
         import homework
 
-        assert hasattr(homework, 'send_message'), 'Функция `send_message()` не существует. Не удаляйте её.'
-        assert hasattr(homework.send_message, '__call__'), 'Функция `send_message()` не существует. Не удаляйте её.'
+        assert hasattr(
+            homework, 'send_message'), 'Функция `send_message()` не существует. Не удаляйте её.'
+        assert hasattr(homework.send_message,
+                       '__call__'), 'Функция `send_message()` не существует. Не удаляйте её.'
         assert len(signature(homework.send_message).parameters) == 1, \
             'Функция `send_message()` должна быть с одним параметром.'
 
