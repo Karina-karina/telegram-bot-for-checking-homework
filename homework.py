@@ -43,6 +43,7 @@ def get_homework_statuses(current_timestamp):
     try:
         return homework_statuses.json()
     except ValueError:
+        return {}
         print('Невалидный JSON')
 
 
@@ -55,13 +56,14 @@ def main():
 
     while True:
         try:
+            send_message('Запуск')
             new_homework = get_homework_statuses(current_timestamp)
             if new_homework.get('homeworks'):
                 send_message(parse_homework_status(
                     new_homework.get('homeworks')[0]))
             current_timestamp = new_homework.get(
                 'current_date')  # обновить timestamp
-            time.sleep(7200)  # опрашивать раз 2 часа
+            time.sleep(2 * 60 * 60)  # опрашивать раз 2 часа
 
         except Exception as e:
             print(f'Бот упал с ошибкой: {e}')
