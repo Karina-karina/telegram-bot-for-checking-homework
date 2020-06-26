@@ -63,7 +63,7 @@ def main():
                     new_homework.get('homeworks')[0]))
             current_timestamp = new_homework.get(
                 'current_date')  # обновить timestamp
-            time.sleep(30 * 60)  # опрашивать раз 30 минут
+            time.sleep(10 * 60)  # опрашивать раз в 10 минут
 
         except Exception as e:
             print(f'Бот упал с ошибкой: {e}')
