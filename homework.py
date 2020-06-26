@@ -53,7 +53,6 @@ def send_message(message):
 
 def main():
     current_timestamp = int(time.time())  # начальное значение timestamp
-    send_message('Запуск!')
 
     while True:
         try:
