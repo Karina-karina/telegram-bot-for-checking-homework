@@ -53,10 +53,10 @@ def send_message(message):
 
 def main():
     current_timestamp = int(time.time())  # начальное значение timestamp
+    send_message('Запуск!')
 
     while True:
         try:
-            send_message('Запуск')
             new_homework = get_homework_statuses(current_timestamp)
             if new_homework.get('homeworks'):
                 send_message(parse_homework_status(
