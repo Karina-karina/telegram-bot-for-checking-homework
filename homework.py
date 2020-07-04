@@ -1,4 +1,3 @@
-
 import os
 import requests
 import telegram
@@ -56,6 +55,7 @@ def main():
 
     while True:
         try:
+            send_message("ghghgh")
             new_homework = get_homework_statuses(current_timestamp)
             if new_homework.get('homeworks'):
                 send_message(parse_homework_status(
